@@ -9,7 +9,11 @@
 .main-list .list-entry:last-child{
     border: 0;
 }
-
+.list-entry-title-link{
+    display: block;
+    text-decoration: none;
+    max-width: fit-content;
+}
 .list-entry-title{
     font-size: 18px;
 }

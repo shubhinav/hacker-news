@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {SearchContextProvider} from "./Context/SearchContext"
+import {BrowserRouter as Router} from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>
     <SearchContextProvider>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </SearchContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

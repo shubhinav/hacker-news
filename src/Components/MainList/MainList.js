@@ -9,7 +9,7 @@ export default function MainList(){
     const {hits} = mainListData
 
     const listEntries = hits.map(hit=>{
-        return hit.title && <ListEntry hit={hit} key={hit.objectID}/>
+        return hit.title && <ListEntry hit={hit} className="list-entry" key={hit.objectID}/>
     })
 
     return(
