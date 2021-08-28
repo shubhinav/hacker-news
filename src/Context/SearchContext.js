@@ -9,6 +9,7 @@ function SearchContextProvider(props){
     const [isError, setIsError] = useState()
     const [mainListData, setMainListData] = useState()
     const [currentPage, setCurrentPage] = useState(0)
+    const [query, setQuery] = useState("")
 
     function nextPage(){
         setCurrentPage(prevPage=>prevPage+1)
@@ -16,11 +17,14 @@ function SearchContextProvider(props){
     function prevPage(){
         setCurrentPage(prevPage=>prevPage-1)
     }
+    function getQueryResults(input){
+      setQuery(input)
+    }
 
     useEffect(()=>{
         async function fetchData(){
             setIsLoading(true)
-            fetch(`https://hn.algolia.com/api/v1/search?query=&page=${currentPage}`).then((response) => {
+            fetch(`https://hn.algolia.com/api/v1/search?query=${query}&page=${currentPage}`).then((response) => {
                 if (response.ok) {
                   return response.json();
                 } else {
@@ -36,7 +40,7 @@ function SearchContextProvider(props){
               });
         }
         fetchData();
-    },[currentPage])
+    },[currentPage, query])
 
     return(
         <SearchContext.Provider value={{mainListData,
@@ -44,7 +48,9 @@ function SearchContextProvider(props){
                                         isError,
                                         nextPage, 
                                         prevPage,
-                                        currentPage}}>
+                                        currentPage,
+                                        getQueryResults
+                                        }}>
             {props.children}
         </SearchContext.Provider>
     )

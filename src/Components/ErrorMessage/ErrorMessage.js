@@ -1,7 +1,7 @@
 import "./ErrorMessage.css"
 import { Icon } from '@iconify/react';
 
-export default function(){
+export default function ErrorMessage(){
     return(
         <div className="error-message container">
             <Icon icon="akar-icons:chat-error" className="error-message-icon"/>
