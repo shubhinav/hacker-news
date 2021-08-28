@@ -1,0 +1,10 @@
+header{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 1em 0;
+    margin-bottom: 1em;
+}
+
+.header-content-title{
+    line-height: 1;
+}

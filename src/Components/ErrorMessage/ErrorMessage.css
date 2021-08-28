@@ -1,0 +1,12 @@
+.error-message{
+    margin-top: 5em;
+    text-align: center;
+    color: var(--neutral-color)
+}
+
+.error-message-icon{
+    font-size: 100px;
+}
+.error-message-title{
+    margin: 20px 0 0.5em;
+}

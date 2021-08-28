@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { useContext } from 'react';
+import { SearchContext } from './Context/SearchContext';
+import Header from './Components/Header/Header';
+import MainList from './Components/MainList/MainList';
+import Loader from './Components/Loader/Loader'
+import ErrorMessage from './Components/ErrorMessage/ErrorMessage';
 
 function App() {
+
+  const {mainListData, isLoading, isError} = useContext(SearchContext)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      {isError ? <ErrorMessage/>
+      : (isLoading ? <Loader/> : (mainListData && <MainList/>))} 
     </div>
   );
 }
