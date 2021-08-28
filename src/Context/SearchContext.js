@@ -24,7 +24,7 @@ function SearchContextProvider(props){
                 if (response.ok) {
                   return response.json();
                 } else {
-                  throw new Error('Something went wrong');
+                  throw new Error();
                 }
               })
               .then((data) => {
@@ -34,20 +34,6 @@ function SearchContextProvider(props){
               .catch((error) => {
                 setIsError(true)
               });
-            // setIsLoading(true)
-            // const response = await fetch(`https://hn.algolia.com/api/v1/search?query=&page=${currentPage}`)
-
-            // if(response.ok){
-            //     const data = await response.json()
-            //     setMainListData(data)
-            //     setIsLoading(false)
-            //     console.log(response)
-            // }
-            
-            // else{
-            //     console.log(response)
-            //     setIsError(true)
-            // }
         }
         fetchData();
     },[currentPage])
