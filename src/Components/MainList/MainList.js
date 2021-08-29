@@ -13,7 +13,7 @@ export default function MainList(){
     })
 
     return(
-        <>
+        <>              
             <div className="container main-list">
                 {listEntries}
                 {console.log(mainListData)}
@@ -21,12 +21,12 @@ export default function MainList(){
 
             <div className="container pagination">
                 <button className="pagination-btn" onClick={prevPage} disabled={currentPage===0}><Icon icon="akar-icons:chevron-left"/></button>
-                <span className="page-number">{mainListData.page + 1}</span>
+                <span className="page-number">{mainListData.page + 1}/{mainListData.nbPages}</span>
                 <button className="pagination-btn" onClick={nextPage} 
-                    disabled={currentPage===Math.floor(mainListData.nbHits/20) || currentPage===mainListData.nbPages-1}>
+                    disabled={currentPage>=mainListData.nbPages-1 || currentPage>=Math.floor(mainListData.nbHits/20)+1}>
                     <Icon icon="akar-icons:chevron-right"/>
                 </button>
-            </div>
+            </div> 
         </>
     )
 }

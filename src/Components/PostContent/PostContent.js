@@ -29,7 +29,6 @@ export default function PostContent(){
                     <p className="post-content-header-author">By <span>{postData.author}</span> on <span>{day} {month}, {year}</span></p>
                     <p className="post-content-header-points"><span>{postData.points}</span> points</p>
                 </div>
-                {console.log(postData)}
             </div>
             <div className="post-content-comment-list">
                 {comments}
