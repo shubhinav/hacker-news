@@ -1,11 +1,13 @@
 import "./PostContent.css"
 import { useContext } from "react"
 import { SearchContext } from "../../Context/SearchContext"
+import {ThemeContext} from "../../Context/ThemeContext"
 import getDate from "../../Utils/getDate"
 
 export default function PostContent(){
 
     const {postData} = useContext(SearchContext)
+    const {theme} = useContext(ThemeContext)
     const {month, year, day} = getDate(postData.created_at)
 
     const comments = postData.children.map(comment=>{
@@ -22,9 +24,10 @@ export default function PostContent(){
     })
 
     return(
-        <div className="container post-content">
+        <div className={`container post-content ${theme}-post-content`}>
             <div className="post-content-header">
                 <h2>{postData.title}</h2>
+                {postData.url && <a className="post-content-header-url" href={postData.url} target="_blank" rel="noreferrer">{postData.url}</a>}
                 <div className="post-content-header-details">
                     <p className="post-content-header-author">By <span>{postData.author}</span> on <span>{day} {month}, {year}</span></p>
                     <p className="post-content-header-points"><span>{postData.points}</span> points</p>

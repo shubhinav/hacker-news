@@ -2,12 +2,26 @@
     padding-bottom: 1em;
     border-bottom: 1px solid gainsboro;
 }
-
+.post-content-header-url{
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.post-content-header-url:hover{
+    text-decoration: underline;
+}
+.post-content-header-details{
+    margin: 1.25em 0 0;
+}
 .post-content-header-author{
     margin: 5px 0;
 }
 .post-content-header-points,.post-content-header-author{
-    color: var(--neutral-color);
+    color: var(--dark-sec-color);
     min-width: fit-content;
     font-size: 15px;
 }
@@ -21,7 +35,7 @@
 }
 .post-content-comment-header{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 .post-content-comment-header-name{
     font-size: 15px;
@@ -30,7 +44,7 @@
 .post-content-comment-header-date{
     margin-left: 10px;
     font-size: 14px;
-    color: var(--neutral-color)
+    color: var(--dark-sec-color)
 }
 .post-content-comment-text{
     font-size: 15px;
@@ -39,8 +53,23 @@
 .post-content-comment-text a{
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: var(--neutral-color);
+    color: var(--dark-sec-color);
 }
+
+
+/* DARK THEME STYLES */
+
+.dark-post-content .post-content-header-points,.dark-post-content .post-content-header-author{
+    color: var(--light-sec-color);
+}
+.dark-post-content .post-content-comment-header-date{
+    color: var(--light-sec-color);
+}
+.dark-post-content .post-content-comment-text a{
+    color: var(--light-sec-color);
+}
+
+
 
 @media(min-width: 750px){
     .post-content-header{
@@ -48,9 +77,6 @@
     }
     .post-content-header-author{
         margin: 0;
-    }
-    .post-content-header-details{
-        margin: 0.75em 0 0;
     }
     .post-content-header-details{
         display: flex;

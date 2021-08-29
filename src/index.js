@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {SearchContextProvider} from "./Context/SearchContext"
+import { ThemeContextProvider } from './Context/ThemeContext';
 import {BrowserRouter as Router} from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>
-    <SearchContextProvider>
-      <Router>
-        <App />
-      </Router>
-    </SearchContextProvider>
+    <ThemeContextProvider>
+      <SearchContextProvider>
+        <Router>
+          <App />
+        </Router>
+      </SearchContextProvider>
+    </ThemeContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

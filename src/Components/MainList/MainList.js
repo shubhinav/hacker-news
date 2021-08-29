@@ -16,7 +16,6 @@ export default function MainList(){
         <>              
             <div className="container main-list">
                 {listEntries}
-                {console.log(mainListData)}
             </div>
 
             <div className="container pagination">

@@ -2,10 +2,12 @@
 
 :root{
   --light-color: #fefefe;
+  --light-sec-color: rgb(190, 190, 190);
+
   --dark-color: #333;
+  --dark-sec-color: rgb(116, 116, 116);
+  
   --primary-color: #208BFF;
-  --secondary-color: #FFD701;
-  --neutral-color: rgb(160, 160, 160);
 }
 
 
@@ -17,8 +19,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: var(--light-color);
-  color: var(--dark-color);
+  transition: background-color 0.2s, color 0.2s;
 }
 
 button, a{

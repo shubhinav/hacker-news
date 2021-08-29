@@ -21,7 +21,7 @@
 }
 .list-entry-details span{
     margin-right: 1em;
-    color: rgb(116, 116, 116)
+    color: var(--dark-sec-color)
 }
 .list-entry-url{
     overflow: hidden;
@@ -62,4 +62,15 @@
 .pagination-btn:disabled{
     color: var(--neutral-color);
     cursor: not-allowed;
+}
+
+
+/* STYLES FOR DARK THEME */
+
+.dark-list-entry{
+    border-bottom: 1px solid rgb(75, 75, 75);
+}
+
+.dark-list-entry .list-entry-details span{
+    color: var(--light-sec-color)
 }
