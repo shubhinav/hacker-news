@@ -9,32 +9,16 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+.header-content-title-link{
+    text-decoration: none;
+}
 .header-content-title{
     line-height: 1;
+    font-size: 24px;
 }
-.search-form{
-    width: 60%;
-    margin-left: 1em;
-}
-.search-input{
-    display: flex;
-    align-items: center;
-    background-color: var(--light-color);
-    color: var(--dark-color);
-    padding: 0.5em;
-    border-radius: 10px;
-    overflow: hidden;
-}
-.search-input-icon{
-    font-size: 20px;
-}
-.search-input input{
-    font-size: 17px;
-    width: 100%;
-    padding: 0.25em 0.5em;
-    border: 0;
-    color: var(--dark-color);
-}
-.search-input input:focus{
-    outline: none;
+
+@media(min-width: 750px){
+    .header-content-title{
+        font-size: 32px;
+    }
 }

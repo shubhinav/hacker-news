@@ -4,6 +4,7 @@ import { SearchContext } from "../Context/SearchContext"
 import ErrorMessage from "../Components/ErrorMessage/ErrorMessage"
 import Loader from "../Components/Loader/Loader"
 import PostContent from "../Components/PostContent/PostContent"
+import Header from "../Components/Header/Header"
 
 export default function Post(){
 
@@ -16,6 +17,7 @@ export default function Post(){
 
     return(
         <>
+            <Header/>
             {isError 
             ? 
             <ErrorMessage/>

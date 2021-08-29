@@ -1,9 +1,9 @@
 import "../MainList.css"
 import { Link } from "react-router-dom"
+import getDate from "../../../Utils/getDate"
 
 export default function ListEntry({hit}){
-    const year = new Date(hit.created_at).getFullYear()
-    const month = new Date(hit.created_at).toLocaleString('default', { month: 'short' });
+    const {month, year} = getDate(hit.created_at)
     return(
         <div className="list-entry">
             <Link to={`/post/${hit.objectID}`} className="list-entry-title-link">

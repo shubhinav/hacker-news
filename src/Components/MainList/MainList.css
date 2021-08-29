@@ -1,6 +1,4 @@
-.main-list{
-    color: var(--dark-color);
-}
+
 .list-entry{
     padding: 1.15em 0;
     border-bottom: 1px solid gainsboro;
@@ -23,6 +21,7 @@
 }
 .list-entry-details span{
     margin-right: 1em;
+    color: rgb(116, 116, 116)
 }
 .list-entry-url{
     overflow: hidden;

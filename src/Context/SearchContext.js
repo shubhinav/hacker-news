@@ -20,6 +20,7 @@ function SearchContextProvider(props){
   }
   function getQueryResults(input){
     setQuery(input)
+    setCurrentPage(0)
   }
 
   function fetchPostData(id){
