@@ -5,7 +5,7 @@ const SearchContext = React.createContext()
 
 function SearchContextProvider(props){
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState()
   const [mainListData, setMainListData] = useState()
   const [currentPage, setCurrentPage] = useState(0)
@@ -22,14 +22,15 @@ function SearchContextProvider(props){
       setCurrentPage(prevPage=>prevPage-1)
   }
   function getQueryResults(input){
+    if (input === query) return
     setMainListData()
-    setQuery(input)
     setCurrentPage(0)
+    setQuery(input)
   }
 
   function fetchPostData(id){
     setIsLoading(true)
-    fetch(`http://hn.algolia.com/api/v1/items/${id}`).then((response) => {
+    fetch(`https://hn.algolia.com/api/v1/items/${id}`).then((response) => {
         if (response.ok) {
           return response.json();
         } else {

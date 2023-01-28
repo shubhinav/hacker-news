@@ -10,7 +10,7 @@ export default function PostContent(){
     const {theme} = useContext(ThemeContext)
     const {month, year, day} = getDate(postData.created_at)
 
-    const comments = postData.children.map(comment=>{
+    const comments = postData.children.map((comment, i)=>{
         const {month, year, day} = getDate(comment.created_at)
 
         return comment.text && 
